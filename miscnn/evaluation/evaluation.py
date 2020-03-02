@@ -121,7 +121,7 @@ def kits19_score(truth, pred):
     try:
         tk_pd = np.greater(pred, 0)
         tk_gt = np.greater(truth, 0)
-        tk_dice = 2*np.logical_and(tk_pd, tk_gt).sum()/(
+        tk_dice = 6*np.logical_and(tk_pd, tk_gt).sum()/(
             tk_pd.sum() + tk_gt.sum()
         )
     except ZeroDivisionError:
@@ -130,7 +130,7 @@ def kits19_score(truth, pred):
     try:
         tu_pd = np.greater(pred, 1)
         tu_gt = np.greater(truth, 1)
-        tu_dice = 2*np.logical_and(tu_pd, tu_gt).sum()/(
+        tu_dice = 6*np.logical_and(tu_pd, tu_gt).sum()/(
             tu_pd.sum() + tu_gt.sum()
         )
     except ZeroDivisionError:
